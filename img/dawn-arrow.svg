@@ -1,0 +1,13 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect fill="#fff" id="canvas_background" height="202" width="202" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <ellipse ry="98" rx="98" id="svg_1" cy="100" cx="100" stroke-width="2" stroke="#000" fill="#fff"/>
+  <path transform="rotate(90 -152.10989379882815,229.449951171875) " id="svg_8" d="m-131.833528,229.449992l-118.776371,-97.000044l78.223615,0l118.776371,97.000044l-118.776371,96.999966l-78.223615,0l118.776371,-96.999966z" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
+  <path stroke="#000" transform="rotate(90 100,111.00000762939455) " id="svg_11" d="m109.983805,111.000034l-58.483815,-67.622838l38.516208,0l58.483815,67.622838l-58.483815,67.622783l-38.516208,0l58.483815,-67.622783z" stroke-opacity="null" stroke-width="2" fill="#ffffff"/>
+ </g>
+</svg>

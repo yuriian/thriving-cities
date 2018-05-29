@@ -1,0 +1,30 @@
+.down-arrow {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 4vh;
+  overflow: visible;
+  will-change: transform;
+  svg {
+    animation: animateArrow 8s linear infinite;
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    circle {
+      // animation: drawCircle 1s ease backwards;
+      stroke-dasharray: 300;
+      stroke-dashoffset: 0;
+    }
+  }
+  circle {
+    stroke-dasharray: 301;
+    stroke-dashoffset: 301;
+    transition-property: stroke-dasharray, stroke-dashoffset;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+}

@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap; // justify-content: space-between;
+  align-content: space-between;
+  height: 100%;
+}
+
+.header {
+  height: 100%;
+  color: #fff;
+  background: linear-gradient( hsla(0, 100%, 50%, 0.2), hsla(0, 100%, 50%, 0.2)), url("./../img/night-bridge_1920-blured.jpg") 90% center/cover no-repeat; //   background: url("./../img/night-bridge_1920-blured.jpg") 90% center/cover no-repeat;
+  // animation: moveBackground 10s linear forwards;
+  &__title {
+    flex: 1 1 100%;
+    text-align: center;
+    font-size: 5rem;
+    padding: 3vh 4vw;
+    border: 1px solid;
+    margin: 35vh 0 7vh; //     background: linear-gradient( hsla(0, 100%, 50%, 0.2),  hsla(0, 100%, 50%, 0.2));
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.logo {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  &:hover {
+    cursor: pointer;
+  }
+  &__img {
+    transition: all .3s ease;
+    width: 4rem; // max-height: 100%; // max-width: 100%;
+    &--small {
+      width: 2.6rem;
+    }
+  }
+  &__caption {
+    margin: 0 10px;
+    font-size: 1.8rem;
+  }
+}
+
+.nav {
+  padding: .5rem 0 .9rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all .4s ease; // background: linear-gradient(rgba(0, 0, 0, .1) 70%, transparent 100%);
+  background: transparent;
+  &--fixed {
+    // background: linear-gradient(rgba(0, 0, 0, .7) 70%, transparent 100%);
+    background: rgba(0, 0, 0, .7);
+  }
+  &__container {
+    width: 90%;
+    display: flex; // flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+  }
+  &__item:not(:last-child) {
+    margin-right: 2vw;
+  }
+  &__link {
+    font-size: .9rem;
+    @include menuItem-linear-bg($menuItemBgColor,
+    $menuItemBgMidColor,
+    $menuItemBgTransitionColor,
+    transparent);
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 0.5px;
+    &:hover {
+      background-position: 0% 100%;
+      &:after {
+        background-position: 0% 100%;
+      }
+    }
+    &:after {
+      opacity: 0;
+      content: '';
+      display: block;
+      height: 2px;
+      margin: 1px 0 0 0;
+      @include menuItem-linear-bg($menuItemUndColor,
+      $menuItemUndMidColor,
+      $menuItemUndTransitionColor,
+      transparent);
+      background-position: 50% 100%;
+      transition-delay: 0.1s;
+    }
+    &--active {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}

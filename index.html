@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Memphis Voice Project</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet">
+  <style>
+    .down-arrow {
+      /* width: 40px;
+      height: 40px;
+      margin: 0 auto; */
+    }
+
+    .down-arrow svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .down-arrow circle {
+      cy: 50%;
+      cx: 50%;
+      r: 48%;
+      stroke-width: 3;
+      stroke: #fff;
+      fill: transparent;
+    }
+
+    .down-arrow polyline {
+      stroke-linejoin: round;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 5;
+      stroke-linecap: round;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" id="home">
+
+    <nav class="nav" id="navBar">
+      <div class="nav__container">
+        <figure class="logo">
+          <img class="logo__img" src="./img/TC_Mark_Gold_RGB.png" alt="Thriving Cities Logo" id="logoImg">
+          <figcaption class="logo__caption">Thriving Cities</figcaption>
+        </figure>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="#home">Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#events" id="menuEvents">Events</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#about">About</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- <div> -->
+
+
+
+
+      <!-- </div> -->
+
+      <h1 class="header__title">Choose an appropriate event!</h1>
+
+      <a class="down-arrow" href="#events" id="arrowDownBtn">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+          <circle />
+          <polyline points="20,45 50,75 80,45" />
+        </svg>
+      </a>
+
+    </div>
+  </header>
+  <main class="main" id="events">
+    <article class="event">
+      <div>
+        <img class="event__img" src="./img/TC_Mark_Gold_RGB.png" alt="Thriving Cities Logo">
+        <h1 class="article__title">Rock Festival</h1>
+        <p class="article__time">July 18, 2018</p>
+      </div>
+
+      <p class="article__text">Et enim pariatur ullamco sunt do quis id officia. Ad velit ullamco laboris eiusmod reprehenderit sunt culpa Lorem quis
+        do minim proident nostrud. Est sunt cupidatat enim occaecat magna magna excepteur nisi pariatur fugiat. Eu pariatur
+        consectetur incididunt do duis consequat. Eiusmod consectetur officia irure esse enim duis nostrud voluptate aliqua
+        cupidatat anim. Amet velit culpa laboris veniam est elit velit est voluptate culpa consequat aute pariatur labore.
+        Labore veniam amet Lorem mollit. Anim nulla ipsum mollit ullamco nisi deserunt excepteur magna pariatur cillum amet
+        ad dolore dolore. Dolore adipisicing ea magna proident aute adipisicing voluptate magna nostrud voluptate excepteur
+        dolor. Voluptate esse officia dolore enim excepteur nisi aliqua ea reprehenderit cupidatat incididunt sunt. Cillum
+        culpa adipisicing sunt minim ipsum ad. Nostrud consequat proident ea culpa non deserunt do ea exercitation laborum
+        aliquip mollit non. Non ut elit nulla ea nisi sit irure officia occaecat fugiat minim esse. Deserunt Lorem nisi aliqua
+        officia nisi commodo cupidatat laborum.
+      </p>
+
+      <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form class="form" action="https://crazything.us18.list-manage.com/subscribe/post?u=2015c8a9d37645564d0cfa6e6&amp;id=ceab1e2603"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+          novalidate>
+          <div id="mc_embed_signup_scroll">
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_2015c8a9d37645564d0cfa6e6_ceab1e2603" tabindex="-1" value="">
+            </div>
+            <div class="clear">
+              <input class="form__btn" type="submit" value="Found out more" name="subscribe" id="mc-embedded-subscribe" class="button">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!--End mc_embed_signup-->
+
+    </article>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
