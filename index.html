@@ -253,6 +253,20 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./js/index.js"></script>
+
+  <div class="hidden">
+    <script type="text/javascript">
+      var images = [];
+
+      function preload(imgs) {
+        for (i = 0; i < imgs.length; i++) {
+          images[i] = new Image()
+          images[i].src = './img/slides/' + imgs[i].path;
+        }
+      }
+      preload(sliderImgs);
+    </script>
+  </div>
 </body>
 
 </html>
