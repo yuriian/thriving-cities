@@ -2,8 +2,14 @@
   width: 80%;
   margin: 0 auto;
   max-width: 1200px;
-    @media (max-width: 767.98px) {
-      width: 90%;}
+  @media (max-width: 767.98px) {
+    width: 90%;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    text-align: center;
+  }
 }
 
 .event {
@@ -17,24 +23,11 @@
   font-size: 1.2rem;
   box-shadow: 0rem 0.3rem 0.7rem 0.2rem hsla(0, 0, 0, 0.2);
   border-radius: 0.3rem;
-  @media (max-width: 1199.98px) {
-    //     width: 40%;
-    //     flex-basis: 40%;
-  }
-  @media (max-width: 991.98px) {
-    // width: 40%;
-  }
-  @media (max-width: 767.98px) {
-    //     width: 100%;
-    // flex-basis: 100%;
-  }
-  @media (max-width: 575.98px) {
-    // width: 100%;
-  }
+
   &__header {
-      @media (max-width: 767.98px) {
-        width: 100%;
-      }
+    @media (max-width: 767.98px) {
+      width: 100%;
+    }
     width: 35%;
     margin: 0 0 1.2em;
     display: flex;
@@ -47,28 +40,27 @@
     border-radius: 0.3em;
   }
   &__title {
-    font-size: 1.6em;
+    font-size: 1.4em;
     margin: 0 0 0.2em;
     line-height: 1.2;
   }
   &__time {
-    margin: 0 0 1.5em;
+    margin: 0 0 1.4em;
     font-size: 0.8em;
     font-weight: bold;
     color: hsl(0, 0, 15%);
   }
   &__text {
     width: 60%;
-          @media (max-width: 767.98px) {
-        width: 100%;
-      }
+    @media (max-width: 767.98px) {
+      width: 100%;
+    }
     margin: 0;
-    font-size: 0.9em;
-    line-height: 1.8;
+    font-size: 0.85em;
+    line-height: 1.9;
     text-align: justify;
     p {
       margin: 0 0 1.2em;
-     
     }
   }
   &__signup {
