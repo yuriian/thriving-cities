@@ -8,24 +8,39 @@ body {
   width: 90%;
   margin: 0 auto;
   display: flex;
-  flex-flow: row wrap; // justify-content: space-between;
-  align-content: space-between;
+  flex-flow: column;
+  align-items: flex-end;
   height: 100%;
+  opacity: 0.99;
 }
 
 .header {
   height: 100%;
   color: #fff;
-  background: linear-gradient( hsla(0, 100%, 50%, 0.2), hsla(0, 100%, 50%, 0.2)), url("./../img/night-bridge_1920-blured.jpg") 90% center/cover no-repeat; //   background: url("./../img/night-bridge_1920-blured.jpg") 90% center/cover no-repeat;
-  // animation: moveBackground 10s linear forwards;
+  position: relative;
+  overflow: hidden;
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 12vh 0 0;
+    border-left: .8rem solid $logoGoldColor;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.2rem 2.8rem 0.5rem 1rem;
+    text-align: left;
+    font-size: 2.4rem;
+    min-height: 7.4rem;
+  }
   &__title {
     flex: 1 1 100%;
-    text-align: center;
-    font-size: 5rem;
-    padding: 3vh 4vw;
-    border: 1px solid;
-    margin: 35vh 0 7vh; //     background: linear-gradient( hsla(0, 100%, 50%, 0.2),  hsla(0, 100%, 50%, 0.2));
-    background: rgba(0, 0, 0, 0.2);
+    margin: 0;
+    font-size: 2em;
+    letter-spacing: 2px;
+  }
+  &__subtitle {
+    margin: 0;
+    font-size: 0.62em;
+    letter-spacing: 1.2px;
   }
 }
 
@@ -34,32 +49,39 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
+  transition: all 0.3s ease;
   &:hover {
     cursor: pointer;
   }
   &__img {
-    transition: all .3s ease;
-    width: 4rem; // max-height: 100%; // max-width: 100%;
-    &--small {
-      width: 2.6rem;
-    }
+    width: 2.5em;
   }
   &__caption {
     margin: 0 10px;
-    font-size: 1.8rem;
+    font-size: 1.6em;
+    text-align: left;
+    p {
+      margin: 0.2rem 0;
+      &:last-child {
+        font-size: 0.5em;
+      }
+    }
   }
 }
 
 .nav {
-  padding: .5rem 0 .9rem;
+  padding: 0.2rem 0;
   position: fixed;
   top: 0;
   width: 100%;
-  transition: all .4s ease; // background: linear-gradient(rgba(0, 0, 0, .1) 70%, transparent 100%);
-  background: transparent;
+  transition: all 0.4s ease;
+  background: linear-gradient(rgba(0, 0, 0, .2) 97%, transparent 100%);
+  z-index: 1;
+  font-size: .8rem;
   &--fixed {
     // background: linear-gradient(rgba(0, 0, 0, .7) 70%, transparent 100%);
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
+    font-size: .7rem;
   }
   &__container {
     width: 90%;
@@ -81,14 +103,12 @@ body {
     margin-right: 2vw;
   }
   &__link {
-    font-size: .9rem;
-    @include menuItem-linear-bg($menuItemBgColor,
-    $menuItemBgMidColor,
-    $menuItemBgTransitionColor,
-    transparent);
+    @include menuItem-linear-bg(90deg, $menuItemBgColor, $menuItemBgMidColor, $menuItemBgTransitionColor, transparent);
     text-decoration: none;
     color: #fff;
     letter-spacing: 0.5px;
+    font-size: 1em;
+    transition: all 0.3s ease;
     &:hover {
       background-position: 0% 100%;
       &:after {
@@ -101,10 +121,7 @@ body {
       display: block;
       height: 2px;
       margin: 1px 0 0 0;
-      @include menuItem-linear-bg($menuItemUndColor,
-      $menuItemUndMidColor,
-      $menuItemUndTransitionColor,
-      transparent);
+      @include menuItem-linear-bg(90deg, $menuItemUndColor, $menuItemUndMidColor, $menuItemUndTransitionColor, transparent);
       background-position: 50% 100%;
       transition-delay: 0.1s;
     }
@@ -112,6 +129,112 @@ body {
       &:after {
         opacity: 1;
       }
+    }
+  }
+}
+
+$hoverColor: $menuItemBgColor;
+$hoverMidColor: $menuItemBgMidColor;
+$transitionColor: $menuItemBgTransitionColor;
+$nonActiveColor: transparent;
+.slider {
+  will-change: transform;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &__img {
+    $sliderBlur: 0;
+    $sliderContrast: 1.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../img/slides/night-bridge_1920.jpg') center center/cover no-repeat; //   background: url("./../img/night-bridge_1920-blured.jpg") 90% center/cover no-repeat;
+    background-color: rgba(0, 0, 0, .2);
+    -webkit-filter: blur($sliderBlur) contrast($sliderContrast);
+    -moz-filter: blur($sliderBlur) contrast($sliderContrast);
+    -o-filter: blur($sliderBlur) contrast($sliderContrast);
+    -ms-filter: blur($sliderBlur) contrast($sliderContrast);
+    filter: blur($sliderBlur) contrast($sliderContrast);
+  }
+  &__change-effect {
+    transform: translateX(-90%);
+    height: 100%;
+    width: 500%;
+    display: flex;
+    align-items: center;
+    text-align: left; // background-image: linear-gradient( 120deg, transparent 80.8%, hsla(0, 100%, 100%, .4) 81.5%, hsla(0, 100%, 100%, .2) 82%, transparent 82.5%), linear-gradient( 120deg, transparent 77%, hsla(0, 0%, 0%, .9) 80%, hsla(0, 0%, 0%, .9) 83%, transparent 86%), linear-gradient( 120deg, hsla(0, 0%, 0%, 0.8) 81%, transparent 80%);
+    background-repeat: no-repeat;
+    background: linear-gradient(120deg, $hoverColor 0%, $hoverMidColor 12.5%, $hoverColor 25%, $hoverColor 25%, $transitionColor 35%, $transitionColor 35%, $transitionColor 65%, $transitionColor 65%, $nonActiveColor 75%, $nonActiveColor 80%, $nonActiveColor 100%);
+    background-size: 100% 100%; // background-position: 500% 0;
+    background-repeat: no-repeat; // transition-property: opacity, background;
+    // transition-timing-function: cubic-bezier(0.35, 0.76, 0.3, 0.99);
+    will-change: opacity, background;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+      background: repeating-linear-gradient(transparent, transparent 2rem, #fff 2rem, #fff 2.15rem, transparent 2.5rem);
+    }
+  }
+  &__heading {
+    display: inline-block;
+    will-change: transform;
+    transform-origin: center; // transform: rotate(-60deg);
+    margin-left: 5%;
+    padding: 0.2em 2.8em;
+    font-size: 2rem;
+    min-height: 7.4rem;
+  }
+  &__title {
+    margin: 0 0 2vh;
+    font-size: 2em;
+    letter-spacing: 4px;
+  }
+  &__subtitle {
+    margin: 0;
+    font-size: 0.62em;
+    letter-spacing: 1.7px;
+  }
+}
+
+.caption {
+  position: absolute;
+  bottom: 10vh;
+  left: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 6rem;
+  font-size: 2rem;
+  align-self: flex-start;
+  text-align: left;
+  background: hsla(0, 0, 0, 0.4);
+  overflow: hidden;
+  transform: scaleY(0);
+  will-change: transform;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: .5rem;
+    height: 100%;
+    background: $logoGoldColor;
+    z-index: 1;
+  }
+  &__title {
+    padding: 0 4rem 0 2rem;
+    font-size: 1em;
+    margin: 0;
+    will-change: transform;
+    transform: translateX(-100%);
+    &--small {
+      font-size: .7em;
     }
   }
 }

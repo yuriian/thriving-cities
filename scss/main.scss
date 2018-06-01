@@ -7,19 +7,12 @@
 :root {
   height: 100%;
   font-size: 16px;
-  @media (max-width: 1199.98px) {
-    .header {
-      background-position-x: 50%;
-    }
-  }
+  @media (max-width: 1199.98px) {}
   @media (max-width: 991.98px) {
     font-size: 12px;
   }
   @media (max-width: 767.98px) {
     font-size: 10px;
-    .header {
-      background-position-x: 40%;
-    }
   }
   @media (max-width: 575.98px) {
     font-size: 8px;

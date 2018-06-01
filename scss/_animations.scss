@@ -48,8 +48,45 @@
   }
 }
 
-@keyframes moveBackground {
+@keyframes moveBgGradient {
   to {
-    background-position: 100% 100%;
+    transform: translateX(0);
   }
+}
+
+@keyframes moveBgImage {
+  to {
+    transform: perspective(500px) translateZ(22px);
+  }
+}
+
+@keyframes moveToRight {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes grow {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.move-bg-gradient {
+  animation: moveBgGradient .3s ease-out 2 alternate;
+}
+
+.animate-growing {
+  animation: grow .5s cubic-bezier(.17, .96, .28, 1.2) forwards;
+  transform-origin: 0 100%;
+}
+
+.animate-moving-right {
+  animation: moveToRight 1s cubic-bezier(.49, .74, .36, .98) .5s forwards;
+  transform-origin: 0 100%;
+}
+
+.animate-delayed-moving-right {
+  animation: moveToRight 1s cubic-bezier(.49, .74, .36, .98) .8s forwards;
+  transform-origin: 0 100%;
 }

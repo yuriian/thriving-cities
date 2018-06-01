@@ -1,6 +1,5 @@
-@mixin menuItem-linear-bg($hoverColor, $hoverMidColor, $transitionColor, $nonActiveColor) {
-  background: rgb(90, 90, 90);
-  background: linear-gradient( 90deg, $hoverColor 0%, $hoverMidColor 12.5%, $hoverColor 25%, $hoverColor 25%, $transitionColor 35%, $transitionColor 35%, $transitionColor 65%, $transitionColor 65%, $nonActiveColor 75%, $nonActiveColor 80%, $nonActiveColor 100%);
+@mixin menuItem-linear-bg($deg, $hoverColor, $hoverMidColor, $transitionColor, $nonActiveColor) {
+  background: linear-gradient($deg, $hoverColor 0%, $hoverMidColor 12.5%, $hoverColor 25%, $hoverColor 25%, $transitionColor 35%, $transitionColor 35%, $transitionColor 65%, $transitionColor 65%, $nonActiveColor 75%, $nonActiveColor 80%, $nonActiveColor 100%);
   background-size: 500% 100%;
   background-repeat: no-repeat;
   background-position: 100% 100%;

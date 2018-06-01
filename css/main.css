@@ -7,48 +7,68 @@ body {
   width: 90%;
   margin: 0 auto;
   display: flex;
-  flex-flow: row wrap;
-  align-content: space-between;
-  height: 100%; }
+  flex-flow: column;
+  align-items: flex-end;
+  height: 100%;
+  opacity: 0.99; }
 
 .header {
   height: 100%;
   color: #fff;
-  background: linear-gradient(rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.2)), url("./../img/night-bridge_1920-blured.jpg") 90% center/cover no-repeat; }
+  position: relative;
+  overflow: hidden; }
+  .header__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 12vh 0 0;
+    border-left: 0.8rem solid #e6af1a;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.2rem 2.8rem 0.5rem 1rem;
+    text-align: left;
+    font-size: 2.4rem;
+    min-height: 7.4rem; }
   .header__title {
     flex: 1 1 100%;
-    text-align: center;
-    font-size: 5rem;
-    padding: 3vh 4vw;
-    border: 1px solid;
-    margin: 35vh 0 7vh;
-    background: rgba(0, 0, 0, 0.2); }
+    margin: 0;
+    font-size: 2em;
+    letter-spacing: 2px; }
+  .header__subtitle {
+    margin: 0;
+    font-size: 0.62em;
+    letter-spacing: 1.2px; }
 
 .logo {
   margin: 0;
   display: flex;
   align-items: center;
-  height: 100%; }
+  height: 100%;
+  transition: all 0.3s ease; }
   .logo:hover {
     cursor: pointer; }
   .logo__img {
-    transition: all .3s ease;
-    width: 4rem; }
-    .logo__img--small {
-      width: 2.6rem; }
+    width: 2.5em; }
   .logo__caption {
     margin: 0 10px;
-    font-size: 1.8rem; }
+    font-size: 1.6em;
+    text-align: left; }
+    .logo__caption p {
+      margin: 0.2rem 0; }
+      .logo__caption p:last-child {
+        font-size: 0.5em; }
 
 .nav {
-  padding: .5rem 0 .9rem;
+  padding: 0.2rem 0;
   position: fixed;
   top: 0;
   width: 100%;
-  transition: all .4s ease;
-  background: transparent; }
+  transition: all 0.4s ease;
+  background: linear-gradient(rgba(0, 0, 0, 0.2) 97%, transparent 100%);
+  z-index: 1;
+  font-size: .8rem; }
   .nav--fixed {
-    background: rgba(0, 0, 0, 0.7); }
+    background: rgba(0, 0, 0, 0.7);
+    font-size: .7rem; }
   .nav__container {
     width: 90%;
     display: flex;
@@ -66,8 +86,6 @@ body {
   .nav__item:not(:last-child) {
     margin-right: 2vw; }
   .nav__link {
-    font-size: .9rem;
-    background: #5a5a5a;
     background: linear-gradient(90deg, #e6af1a 0%, #ebbf47 12.5%, #e6af1a 25%, #e6af1a 25%, #fcf7e8 35%, #fcf7e8 35%, #fcf7e8 65%, #fcf7e8 65%, transparent 75%, transparent 80%, transparent 100%);
     background-size: 500% 100%;
     background-repeat: no-repeat;
@@ -78,7 +96,9 @@ body {
     will-change: opacity, background;
     text-decoration: none;
     color: #fff;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px;
+    font-size: 1em;
+    transition: all 0.3s ease; }
     .nav__link:hover {
       background-position: 0% 100%; }
       .nav__link:hover:after {
@@ -89,7 +109,6 @@ body {
       display: block;
       height: 2px;
       margin: 1px 0 0 0;
-      background: #5a5a5a;
       background: linear-gradient(90deg, #ebb92d 0%, #ecc251 12.5%, #ebb92d 25%, #ebb92d 25%, #fcf7e8 35%, #fcf7e8 35%, #fcf7e8 65%, #fcf7e8 65%, transparent 75%, transparent 80%, transparent 100%);
       background-size: 500% 100%;
       background-repeat: no-repeat;
@@ -103,10 +122,100 @@ body {
     .nav__link--active:after {
       opacity: 1; }
 
+.slider {
+  will-change: transform;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .slider__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./../img/slides/night-bridge_1920.jpg") center center/cover no-repeat;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-filter: blur(0) contrast(1.1);
+    -moz-filter: blur(0) contrast(1.1);
+    -o-filter: blur(0) contrast(1.1);
+    -ms-filter: blur(0) contrast(1.1);
+    filter: blur(0) contrast(1.1); }
+  .slider__change-effect {
+    transform: translateX(-90%);
+    height: 100%;
+    width: 500%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background-repeat: no-repeat;
+    background: linear-gradient(120deg, #e6af1a 0%, #ebbf47 12.5%, #e6af1a 25%, #e6af1a 25%, #fcf7e8 35%, #fcf7e8 35%, #fcf7e8 65%, #fcf7e8 65%, transparent 75%, transparent 80%, transparent 100%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    will-change: opacity, background; }
+    .slider__change-effect:before {
+      content: '';
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+      background: repeating-linear-gradient(transparent, transparent 2rem, #fff 2rem, #fff 2.15rem, transparent 2.5rem); }
+  .slider__heading {
+    display: inline-block;
+    will-change: transform;
+    transform-origin: center;
+    margin-left: 5%;
+    padding: 0.2em 2.8em;
+    font-size: 2rem;
+    min-height: 7.4rem; }
+  .slider__title {
+    margin: 0 0 2vh;
+    font-size: 2em;
+    letter-spacing: 4px; }
+  .slider__subtitle {
+    margin: 0;
+    font-size: 0.62em;
+    letter-spacing: 1.7px; }
+
+.caption {
+  position: absolute;
+  bottom: 10vh;
+  left: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 6rem;
+  font-size: 2rem;
+  align-self: flex-start;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transform: scaleY(0);
+  will-change: transform; }
+  .caption:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: .5rem;
+    height: 100%;
+    background: #e6af1a;
+    z-index: 1; }
+  .caption__title {
+    padding: 0 4rem 0 2rem;
+    font-size: 1em;
+    margin: 0;
+    will-change: transform;
+    transform: translateX(-100%); }
+    .caption__title--small {
+      font-size: .7em; }
+
 .down-arrow {
+  position: absolute;
+  bottom: 1.5vh;
+  align-self: center;
   width: 3rem;
   height: 3rem;
-  margin: 0 auto 4vh;
   overflow: visible;
   will-change: transform; }
   .down-arrow svg {
@@ -160,51 +269,123 @@ body {
   to {
     stroke-dasharray: 1000;
     stroke-dashoffset: 0; } }
-@keyframes moveBackground {
+@keyframes moveBgGradient {
   to {
-    background-position: 100% 100%; } }
+    transform: translateX(0); } }
+@keyframes moveBgImage {
+  to {
+    transform: perspective(500px) translateZ(22px); } }
+@keyframes moveToRight {
+  to {
+    transform: translateX(0); } }
+@keyframes grow {
+  to {
+    transform: scaleY(1); } }
+.move-bg-gradient {
+  animation: moveBgGradient .3s ease-out 2 alternate; }
+
+.animate-growing {
+  animation: grow 0.5s cubic-bezier(0.17, 0.96, 0.28, 1.2) forwards;
+  transform-origin: 0 100%; }
+
+.animate-moving-right {
+  animation: moveToRight 1s cubic-bezier(0.49, 0.74, 0.36, 0.98) 0.5s forwards;
+  transform-origin: 0 100%; }
+
+.animate-delayed-moving-right {
+  animation: moveToRight 1s cubic-bezier(0.49, 0.74, 0.36, 0.98) 0.8s forwards;
+  transform-origin: 0 100%; }
+
+.events {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px; }
+  @media (max-width: 767.98px) {
+    .events {
+      width: 90%; } }
+
+.event {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-width: 10rem;
+  margin: 3rem 1rem 2rem;
+  padding: 1.3em 2em 0;
+  font-size: 1.2rem;
+  box-shadow: 0rem 0.3rem 0.7rem 0.2rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem; }
+  .event__header {
+    width: 35%;
+    margin: 0 0 1.2em;
+    display: flex;
+    flex-direction: column; }
+    @media (max-width: 767.98px) {
+      .event__header {
+        width: 100%; } }
+  .event__img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 0 1.6em;
+    border-radius: 0.3em; }
+  .event__title {
+    font-size: 1.6em;
+    margin: 0 0 0.2em;
+    line-height: 1.2; }
+  .event__time {
+    margin: 0 0 1.5em;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #262626; }
+  .event__text {
+    width: 60%;
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.8;
+    text-align: justify; }
+    @media (max-width: 767.98px) {
+      .event__text {
+        width: 100%; } }
+    .event__text p {
+      margin: 0 0 1.2em; }
+  .event__signup {
+    width: 100%; }
+
 .form__btn {
-  font-size: 0.7rem;
-  padding: 0.375rem 0.75rem;
+  font-size: 1em;
+  padding: 0.4em 0.9em;
   color: #fff;
   text-transform: uppercase;
-  box-shadow: 11px 10px 0px 0px rgba(54, 54, 54, 0.35);
+  box-shadow: 0.2em 0.24em 0.3em 0 rgba(54, 54, 54, 0.3);
   will-change: transform, color, background-color;
   transition-property: transform, box-shadow, background-color;
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
-  background-color: #009494;
-  border: 1px solid #009494 !important;
-  line-height: 1.7 !important;
-  border-radius: 0.25rem;
+  background-color: #e6af1a;
+  border: 1px solid #e6af1a;
+  border-radius: 0.2em;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: center; }
 .form__btn:hover {
-  background-color: #008585;
-  box-shadow: 3px 3px 0px 0px rgba(54, 54, 54, 0.36);
-  transform: translateY(6px); }
-.form__btn:focus {
-  border: 0 !important; }
+  background-color: #d8a518;
+  box-shadow: 0.1em 0.1em 0.1em 0 rgba(54, 54, 54, 0.36);
+  transform: translateY(0.1em); }
 .form__btn:active {
   border: 0;
-  transform: translateY(10px);
+  transform: translateY(0.3em);
   box-shadow: 1px 1px 0px 0px rgba(54, 54, 54, 0.32) !important;
-  background-color: #007a7a !important; }
+  background-color: #cf9e17; }
 
 :root {
   height: 100%;
   font-size: 16px; }
-  @media (max-width: 1199.98px) {
-    :root .header {
-      background-position-x: 50%; } }
   @media (max-width: 991.98px) {
     :root {
       font-size: 12px; } }
   @media (max-width: 767.98px) {
     :root {
-      font-size: 10px; }
-      :root .header {
-        background-position-x: 40%; } }
+      font-size: 10px; } }
   @media (max-width: 575.98px) {
     :root {
       font-size: 8px; } }

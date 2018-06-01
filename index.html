@@ -40,17 +40,31 @@
 </head>
 
 <body>
-  <header class="header" id="home">
+  <header class="header" id="header">
+
+    <div class="slider">
+      <div class="slider__img" id="sliderImg"></div>
+
+      <div class="slider__caption caption animate-growing" id="sliderCaption">
+        <p class="caption__title animate-moving-right" id="sliderTitle">Image caption</p>
+        <p class="caption__title caption__title--small animate-delayed-moving-right" id="sliderSubtitle">Memphis, TN</p>
+      </div>
+
+      <div class="slider__change-effect" id="changeEffectDiv"></div>
+    </div>
 
     <nav class="nav" id="navBar">
       <div class="nav__container">
         <figure class="logo">
           <img class="logo__img" src="./img/TC_Mark_Gold_RGB.png" alt="Thriving Cities Logo" id="logoImg">
-          <figcaption class="logo__caption">Thriving Cities</figcaption>
+          <figcaption class="logo__caption">
+            <p>MVP</p>
+            <p>Memphis Voice Project</p>
+          </figcaption>
         </figure>
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link nav__link--active" href="#home">Home</a>
+            <a class="nav__link nav__link--active" href="#header">Home</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="#events" id="menuEvents">Events</a>
@@ -66,14 +80,10 @@
     </nav>
 
     <div class="container">
-      <!-- <div> -->
-
-
-
-
-      <!-- </div> -->
-
-      <h1 class="header__title">Choose an appropriate event!</h1>
+      <div class="header__heading">
+        <h1 class="header__title">Memphis, TN</h1>
+        <p class="header__subtitle">the best city for best pastimes</p>
+      </div>
 
       <a class="down-arrow" href="#events" id="arrowDownBtn">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -81,49 +91,163 @@
           <polyline points="20,45 50,75 80,45" />
         </svg>
       </a>
-
     </div>
+
   </header>
-  <main class="main" id="events">
-    <article class="event">
-      <div>
-        <img class="event__img" src="./img/TC_Mark_Gold_RGB.png" alt="Thriving Cities Logo">
-        <h1 class="article__title">Rock Festival</h1>
-        <p class="article__time">July 18, 2018</p>
-      </div>
+  <main class="main">
+    <div class="events" id="events">
+      <article class="event">
+        <header class="event__header">
+          <img class="event__img" src="./img/slides/Billboard.jpg" alt="Theater">
+          <h1 class="event__title">Orpheum Party</h1>
+          <div class="event__time">July 18, 2018</div>
 
-      <p class="article__text">Et enim pariatur ullamco sunt do quis id officia. Ad velit ullamco laboris eiusmod reprehenderit sunt culpa Lorem quis
-        do minim proident nostrud. Est sunt cupidatat enim occaecat magna magna excepteur nisi pariatur fugiat. Eu pariatur
-        consectetur incididunt do duis consequat. Eiusmod consectetur officia irure esse enim duis nostrud voluptate aliqua
-        cupidatat anim. Amet velit culpa laboris veniam est elit velit est voluptate culpa consequat aute pariatur labore.
-        Labore veniam amet Lorem mollit. Anim nulla ipsum mollit ullamco nisi deserunt excepteur magna pariatur cillum amet
-        ad dolore dolore. Dolore adipisicing ea magna proident aute adipisicing voluptate magna nostrud voluptate excepteur
-        dolor. Voluptate esse officia dolore enim excepteur nisi aliqua ea reprehenderit cupidatat incididunt sunt. Cillum
-        culpa adipisicing sunt minim ipsum ad. Nostrud consequat proident ea culpa non deserunt do ea exercitation laborum
-        aliquip mollit non. Non ut elit nulla ea nisi sit irure officia occaecat fugiat minim esse. Deserunt Lorem nisi aliqua
-        officia nisi commodo cupidatat laborum.
-      </p>
-
-      <!-- Begin MailChimp Signup Form -->
-      <div id="mc_embed_signup">
-        <form class="form" action="https://crazything.us18.list-manage.com/subscribe/post?u=2015c8a9d37645564d0cfa6e6&amp;id=ceab1e2603"
-          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
-          novalidate>
-          <div id="mc_embed_signup_scroll">
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-              <input type="text" name="b_2015c8a9d37645564d0cfa6e6_ceab1e2603" tabindex="-1" value="">
-            </div>
-            <div class="clear">
-              <input class="form__btn" type="submit" value="Found out more" name="subscribe" id="mc-embedded-subscribe" class="button">
-            </div>
+          <!-- Begin MailChimp Signup Form -->
+          <div class="event__signup" id="mc_embed_signup">
+            <form class="form" action="https://crazything.us18.list-manage.com/subscribe/post?u=2015c8a9d37645564d0cfa6e6&amp;id=ceab1e2603"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+              novalidate>
+              <div id="mc_embed_signup_scroll">
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" name="b_2015c8a9d37645564d0cfa6e6_ceab1e2603" tabindex="-1" value="">
+                </div>
+                <div class="clear">
+                  <input class="form__btn button" type="submit" value="Sing Up" name="subscribe" id="mc-embedded-subscribe">
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
+          <!--End mc_embed_signup-->
+        </header>
 
-      <!--End mc_embed_signup-->
+        <div class="event__text">
+          <p>Et enim pariatur ullamco sunt do quis id officia. Ad velit ullamco laboris eiusmod reprehenderit sunt culpa Lorem
+            quis do minim proident nostrud. Est sunt cupidatat enim occaecat magna magna excepteur nisi pariatur fugiat.
+            Eu pariatur consectetur incididunt do duis consequat.
+          </p>
+          <p>Anim nulla ipsum mollit ullamco nisi deserunt excepteur magna pariatur cillum amet ad dolore dolore. Dolore adipisicing
+            ea magna proident aute adipisicing voluptate magna nostrud voluptate excepteur dolor. Cillum culpa adipisicing
+            sunt minim ipsum ad. Non ut elit nullaea nisi sit irure officia occaecat fugiat minim esse. Deserunt Lorem nisi
+            aliqua officia nisi commodo cupidatat laborum.
+          </p>
+        </div>
+      </article>
 
-    </article>
+      <article class="event">
+        <header class="event__header">
+          <img class="event__img" src="./img/slides/Graceland_sign.jpg" alt="Graceland Sign">
+          <h1 class="event__title">Graceland</h1>
+          <div class="event__time">July 18, 2018</div>
+
+          <!-- Begin MailChimp Signup Form -->
+          <div class="event__signup" id="mc_embed_signup">
+            <form class="form" action="https://crazything.us18.list-manage.com/subscribe/post?u=2015c8a9d37645564d0cfa6e6&amp;id=ceab1e2603"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+              novalidate>
+              <div id="mc_embed_signup_scroll">
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" name="b_2015c8a9d37645564d0cfa6e6_ceab1e2603" tabindex="-1" value="">
+                </div>
+                <div class="clear">
+                  <input class="form__btn button" type="submit" value="Sing Up" name="subscribe" id="mc-embedded-subscribe">
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--End mc_embed_signup-->
+        </header>
+
+        <div class="event__text">
+          <p>Et enim pariatur ullamco sunt do quis id officia. Ad velit ullamco laboris eiusmod reprehenderit sunt culpa Lorem
+            quis do minim proident nostrud. Est sunt cupidatat enim occaecat magna magna excepteur nisi pariatur fugiat.
+            Eu pariatur consectetur incididunt do duis consequat.
+          </p>
+          <p>Anim nulla ipsum mollit ullamco nisi deserunt excepteur magna pariatur cillum amet ad dolore dolore. Dolore adipisicing
+            ea magna proident aute adipisicing voluptate magna nostrud voluptate excepteur dolor. Cillum culpa adipisicing
+            sunt minim ipsum ad. Non ut elit nullaea nisi sit irure officia occaecat fugiat minim esse. Deserunt Lorem nisi
+            aliqua officia nisi commodo cupidatat laborum.
+          </p>
+        </div>
+      </article>
+
+      <article class="event">
+        <header class="event__header">
+          <img class="event__img" src="./img/slides/The_Orpheum_Theatre.jpg" alt="The Orpheum Theatre">
+          <h1 class="event__title">The Orpheum Theatre</h1>
+          <div class="event__time">July 18, 2018</div>
+
+          <!-- Begin MailChimp Signup Form -->
+          <div class="event__signup" id="mc_embed_signup">
+            <form class="form" action="https://crazything.us18.list-manage.com/subscribe/post?u=2015c8a9d37645564d0cfa6e6&amp;id=ceab1e2603"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+              novalidate>
+              <div id="mc_embed_signup_scroll">
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" name="b_2015c8a9d37645564d0cfa6e6_ceab1e2603" tabindex="-1" value="">
+                </div>
+                <div class="clear">
+                  <input class="form__btn button" type="submit" value="Sing Up" name="subscribe" id="mc-embedded-subscribe">
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--End mc_embed_signup-->
+        </header>
+
+        <div class="event__text">
+          <p>Et enim pariatur ullamco sunt do quis id officia. Ad velit ullamco laboris eiusmod reprehenderit sunt culpa Lorem
+            quis do minim proident nostrud. Est sunt cupidatat enim occaecat magna magna excepteur nisi pariatur fugiat.
+            Eu pariatur consectetur incididunt do duis consequat.
+          </p>
+          <p>Anim nulla ipsum mollit ullamco nisi deserunt excepteur magna pariatur cillum amet ad dolore dolore. Dolore adipisicing
+            ea magna proident aute adipisicing voluptate magna nostrud voluptate excepteur dolor. Cillum culpa adipisicing
+            sunt minim ipsum ad. Non ut elit nullaea nisi sit irure officia occaecat fugiat minim esse. Deserunt Lorem nisi
+            aliqua officia nisi commodo cupidatat laborum.
+          </p>
+        </div>
+      </article>
+
+      <article class="event">
+        <header class="event__header">
+          <img class="event__img" src="./img/slides/Mississippi_River_Park_Memphis_TN_003.jpg" alt="Mississippi River Park">
+          <h1 class="event__title">Mississippi River Park</h1>
+          <div class="event__time">July 18, 2018</div>
+
+          <!-- Begin MailChimp Signup Form -->
+          <div class="event__signup" id="mc_embed_signup">
+            <form class="form" action="https://crazything.us18.list-manage.com/subscribe/post?u=2015c8a9d37645564d0cfa6e6&amp;id=ceab1e2603"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+              novalidate>
+              <div id="mc_embed_signup_scroll">
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" name="b_2015c8a9d37645564d0cfa6e6_ceab1e2603" tabindex="-1" value="">
+                </div>
+                <div class="clear">
+                  <input class="form__btn button" type="submit" value="Sing Up" name="subscribe" id="mc-embedded-subscribe">
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--End mc_embed_signup-->
+        </header>
+
+        <div class="event__text">
+          <p>Et enim pariatur ullamco sunt do quis id officia. Ad velit ullamco laboris eiusmod reprehenderit sunt culpa Lorem
+            quis do minim proident nostrud. Est sunt cupidatat enim occaecat magna magna excepteur nisi pariatur fugiat.
+            Eu pariatur consectetur incididunt do duis consequat.
+          </p>
+          <p>Anim nulla ipsum mollit ullamco nisi deserunt excepteur magna pariatur cillum amet ad dolore dolore. Dolore adipisicing
+            ea magna proident aute adipisicing voluptate magna nostrud voluptate excepteur dolor. Cillum culpa adipisicing
+            sunt minim ipsum ad. Non ut elit nullaea nisi sit irure officia occaecat fugiat minim esse. Deserunt Lorem nisi
+            aliqua officia nisi commodo cupidatat laborum.
+          </p>
+        </div>
+      </article>
+    </div>
   </main>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
